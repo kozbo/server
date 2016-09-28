@@ -316,8 +316,8 @@ functionality is split between the ``client``, ``server``, ``protocol`` and
 ``ga4gh_client`` and ``ga4gh_server`` programs.
 
 An important file in the project is ``ga4gh/_protocol_definitions.py``.
-This file defines the classes for the GA4GH protocol.
-The file is generated using the ``scripts/process_schemas.py`` script,
+This file defines the classes for the GA4GH protocol. The 
+file is generated using the ``scripts/process_schemas.py`` script,
 which takes input data from the
 `GA4GH schemas repo <https://github.com/ga4gh/schemas>`_.
 To generate a new ``_protocol_definitions.py`` file, use
