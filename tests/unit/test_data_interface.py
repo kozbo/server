@@ -69,7 +69,7 @@ class TestInterfacingLayer(unittest.TestCase):
 
     def testGetBiosample(self):
         self._testGetMethod(
-            self._repo.allBiosamples, self._client.get_bio_sample)
+            self._repo.allBiosamples, self._client.get_biosample)
 
     def testGetIndividual(self):
         self._testGetMethod(
@@ -224,7 +224,7 @@ class TestInterfacingLayer(unittest.TestCase):
     def testSearchBiosamples(self):
         self._testSearchMethodInContainer(
             'getBiosamples',
-            self._client.search_bio_samples,
+            self._client.search_biosamples,
             self._repo.getDatasets())
 
     def testSearchIndividuals(self):

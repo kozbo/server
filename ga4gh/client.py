@@ -100,7 +100,7 @@ class AbstractClient(object):
         """
         raise NotImplemented()
 
-    def get_bio_sample(self, biosample_id):
+    def get_biosample(self, biosample_id):
         """
         Perform a get request for the given Biosample.
 
@@ -550,7 +550,7 @@ class AbstractClient(object):
         return self._run_search_request(
             request, "callsets", protocol.SearchCallSetsResponse)
 
-    def search_bio_samples(self, dataset_id, name=None, individual_id=None):
+    def search_biosamples(self, dataset_id, name=None, individual_id=None):
         """
         Returns an iterator over the Biosamples fulfilling the specified
         conditions.

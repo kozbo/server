@@ -260,7 +260,7 @@ class TestSearchMethodsCallRunRequest(unittest.TestCase):
         request.name = self.biosampleName
         request.individual_id = self.individualId
         request.page_size = self.pageSize
-        self.httpClient.search_bio_samples(
+        self.httpClient.search_biosamples(
             self.datasetId, self.biosampleName, self.individualId)
         self.httpClient._run_search_request.assert_called_once_with(
             request, "biosamples", protocol.SearchBiosamplesResponse)
@@ -322,7 +322,7 @@ class TestSearchMethodsCallRunRequest(unittest.TestCase):
             "variants", protocol.Variant, self.objectId)
 
     def testGetBiosample(self):
-        self.httpClient.get_bio_sample(self.objectId)
+        self.httpClient.get_biosample(self.objectId)
         self.httpClient._run_get_request.assert_called_once_with(
             "biosamples", protocol.Biosample, self.objectId)
 

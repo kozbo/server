@@ -249,7 +249,7 @@ class SearchBiosamplesRunner(AbstractSearchRunner):
         self._name = args.name
 
     def _run(self, datasetId):
-        iterator = self._client.search_bio_samples(
+        iterator = self._client.search_biosamples(
             datasetId,
             name=self._name,
             individual_id=self._individualId)
@@ -273,7 +273,7 @@ class SearchIndividualsRunner(AbstractSearchRunner):
         self._name = args.name
 
     def _run(self, datasetId):
-        iterator = self._client.search_bio_samples(
+        iterator = self._client.search_biosamples(
             datasetId,
             name=self._name)
         self._output(iterator)

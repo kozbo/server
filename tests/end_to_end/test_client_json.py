@@ -187,7 +187,7 @@ class TestClientJson(TestClientOutput):
 
     def testGetBiosamples(self):
         for dataset in self._client.search_datasets():
-            for biosample in self._client.search_bio_samples(dataset.id):
+            for biosample in self._client.search_biosamples(dataset.id):
                 self.verifyParsedOutputsEqual(
                     [biosample], "biosamples-get", biosample.id)
 
@@ -274,11 +274,11 @@ class TestClientJson(TestClientOutput):
 
     def testSearchBiosamples(self):
         for dataset in self._client.search_datasets():
-            iterator = self._client.search_bio_samples(dataset.id)
+            iterator = self._client.search_biosamples(dataset.id)
             self.verifyParsedOutputsEqual(iterator, "biosamples-search")
         for dataset in self._client.search_datasets():
-            for biosample in self._client.search_bio_samples(dataset.id):
-                iterator = self._client.search_bio_samples(
+            for biosample in self._client.search_biosamples(dataset.id):
+                iterator = self._client.search_biosamples(
                     dataset.id, biosample.name)
                 self.verifyParsedOutputsEqual(
                     iterator,
@@ -287,7 +287,7 @@ class TestClientJson(TestClientOutput):
                         dataset.id,
                         biosample.name))
                 if biosample.individualId:
-                    iterator = self._client.search_bio_samples(
+                    iterator = self._client.search_biosamples(
                         dataset.id, individual_id=biosample.individualId)
                     self.verifyParsedOutputsEqual(
                         iterator,
