@@ -509,7 +509,7 @@ class RepoManager(object):
             self._args.rnaQuantificationSetName)
 
         def func():
-            self._updateRepo(self._repo.removeRnaQuantification, rnaQuantSet)
+            self._updateRepo(self._repo.removeRnaQuantificationSet, rnaQuantSet)
         self._confirmDelete(
             "RnaQuantificationSet", rnaQuantSet.getLocalId(), func)
 
@@ -908,7 +908,7 @@ class RepoManager(object):
             runner="removeRnaQuantificationSet")
         cls.addRepoArgument(removeRnaQuantificationSetParser)
         cls.addDatasetNameArgument(removeRnaQuantificationSetParser)
-        cls.addRnaQuantificationNameArgument(removeRnaQuantificationSetParser)
+        cls.addRnaQuantificationSetNameArgument(removeRnaQuantificationSetParser)
         cls.addForceOption(removeRnaQuantificationSetParser)
 
         addPhenotypeAssociationSetParser = cli.addSubparser(
