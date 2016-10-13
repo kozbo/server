@@ -539,8 +539,8 @@ class RepoManager(object):
             self._args.rnaQuantificationSetName)
 
         def func():
-            self._updateRepo(self._repo.removeRnaQuantificationSet, 
-                rnaQuantSet)
+            self._updateRepo(self._repo.removeRnaQuantificationSet,
+                             rnaQuantSet)
         self._confirmDelete(
             "RnaQuantificationSet", rnaQuantSet.getLocalId(), func)
 
