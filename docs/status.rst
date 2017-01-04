@@ -21,6 +21,38 @@ Release Notes
 
 
 *****
+0.3.5
+*****
+
+Alpha pre-release supporting minor update. We have done some restructuring,
+some bug fixes and some minor protocol updates in this release.
+
+- Restructuring: We have reorganized our codebase to separate out the schemas,
+   client, and server components a separately installable python components.
+   Running 'pip install ga4gh -pre' will still automatically install all
+   required packages. But now developers who wish to leverage the python
+   libraries around the schemas can just use 'pip install ga4gh-schemas',
+   and developers of client code can gain access to the client API library
+   my just running 'pip install ga4gh-cleint'.
+- Bug fixes and improvements
+    - Fix to be able to handle VCFs with genotype == './.'
+    - Fixed bug with OIDC Authentication
+    - Repo manager list out of range error
+    - G2P features search was returning a 404, this has been fixed
+    - Sped up readGroupSet generator
+    - Enhanced ENCODE RNA downloader
+    - Added support for Auth0
+    - Refactored useage of the term 'biosample' to be consistent
+    - Moved to Protobuf version 3.1
+- Documentation updates
+    - Github usage
+    - Added sections for new python packages: client and schemas
+    - Split out repository manager docs
+    - Docker file documentation updated
+    - Updated the Configuration section to document the Auth0 settings
+
+
+*****
 0.3.4
 *****
 
