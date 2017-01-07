@@ -28,7 +28,7 @@ ga4gh.__path__.insert(0, '../ga4gh')
 
 import ga4gh.server
 
-from unittest.mock import MagicMock
+from mock import Mock as MagicMock
 
 class Mock(MagicMock):
     @classmethod
