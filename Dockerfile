@@ -14,7 +14,7 @@ RUN apt-get update  --fix-missing
 RUN apt-get upgrade --yes
 
 # Install packages
-RUN apt-get install -y tar git curl libcurl4-gnutls-dev wget dialog \
+RUN apt-get install -y tar git curl libcurl4-openssl-dev wget dialog \
     net-tools build-essential python python-dev python-distribute \
     python-pip zlib1g-dev apache2 libapache2-mod-wsgi libxslt1-dev \
     libffi-dev libssl-dev
