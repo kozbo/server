@@ -13,87 +13,11 @@ reads API. Some missing features are:
 - Searching over multiple ReadGroups in different ReadGroupSets.
 
 For more detail on individual development issues, please see the project's
-`issue page <https://github.com/ga4gh/server/issues>`_.
+`issue page <https://github.com/ga4gh/ga4gh-server/issues>`_.
 
 +++++++++++++
 Release Notes
 +++++++++++++
-
-*****
-0.3.6
-*****
-
-This an alpha pre-release that contains some major updates. The most important 
-changes are highlighted in **bold** below. We have also made some updates to 
-the documentation.
-
-Features:
-
-- **Rename package from “ga4gh” to “ga4gh-server”** #1582, #1583
-
-- Added **support for BigWig files** in a new Continuous Data object #1573  New endpoints and message types include:
- - `POST /continuoussets/search`
- - `GET /continuoussets/{id}`
- - `POST /continuous/search`
- - Continuous (new)
- - ContinuousSet (new)
- 
-- Add **ability to list and join peer server networks** #1507  New endpoints and message types include:
- - `POST /peers/list`
- - `POST /peers/announce`
- - `GET /info`
- - ListPeersResponse (new)
- - Peer (new)
- - AnnouncePeerResponse (new)
- - GetInfoResponse (new)
-
-- Remove feature_id from ExpressionLevel and add ability to search by the Name field #1580  Impacts
- - 'POST /expressionlevels/search'
- - `GET /expressionlevels/{id}`
-
-- Replaced info fields with rich type Attributes fields #1521  Impacts the following message types:
- - TranscriptEffect
- - VariantAnnotation
- - Individual
- - Biosample
- - Experiment (new)
- - Analysis (new)
- - Dataset
- - ReadGroup
- - ReadGroupSet
- - ReadAlignment
- - Reference
- - ReferenceSet
- - RnaQuantificationSet
- - RnaQuantification
- - ExpressionLevel
- - Feature
- - VariantSetMetadata
- - CallSet
- - Call
- - Variant
-
-- Replace NCBI taxon ID integer with ontology term #1551  Impacts the following message types:
- - Reference
- - ReferenceSet
-
-- Changed ontology term “id” to “term_id” #1513  Impacts the following message types:
- - OntologyTerm
-
-Documentation:
-
-- Document auto-releases, constraint instructions #1578
-
-- Improved development document for virtualenv command #1550
-
-Infrastructure:
-
-- Automatically deploy tagged releases to Pypi from Travis #1576
-
-- Refactor transcript annotation #1334
-
-- Speedups to rna quantification ingest #1564
-
 
 *****
 0.3.5
@@ -102,13 +26,13 @@ Infrastructure:
 Alpha pre-release supporting minor update. We have done some restructuring,
 some bug fixes and some minor protocol updates in this release.
 
-- Restructuring: We have reorganized our codebase to separate out the schemas,
-   client, and server components as separately installable Python components.
-   Running 'pip install ga4gh --pre' will still automatically install all
-   required packages. But now developers who wish to leverage the Python
-   libraries around the schemas can just use 'pip install ga4gh-schemas',
-   and developers of client code can gain access to the client API library
-   my just running 'pip install ga4gh-client'.
+- Restructuring: We have reorganized our codebase to separate out the schemas, 
+  client, and server components as separately installable Python components.
+  Running 'pip install ga4gh --pre' will still automatically install all
+  required packages. But now developers who wish to leverage the Python
+  libraries around the schemas can just use 'pip install ga4gh-schemas',
+  and developers of client code can gain access to the client API library
+  my just running 'pip install ga4gh-client'.
 - Bug fixes and improvements
     - Fix to be able to handle VCFs with genotype == './.' (server #1389)
     - Fixed bug with OIDC Authentication (server #1452, #1508)
